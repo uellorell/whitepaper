@@ -100,24 +100,17 @@
 
     const goTo = (index) => {
       const target = Math.max(0, Math.min(cards.length - 1, index));
+      const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
       track.scrollTo({
-        left: cards[target].offsetLeft - track.offsetLeft,
+        left: (target / (cards.length - 1)) * maxScroll,
         behavior: reducedMotion.matches ? 'instant' : 'smooth',
       });
       setActive(target);
     };
 
     const syncActive = () => {
-      let closest = 0;
-      let distance = Infinity;
-      cards.forEach((card, index) => {
-        const delta = Math.abs(card.offsetLeft - track.scrollLeft - track.offsetLeft);
-        if (delta < distance) {
-          closest = index;
-          distance = delta;
-        }
-      });
-      setActive(closest);
+      const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+      setActive(maxScroll === 0 ? 0 : Math.round((track.scrollLeft / maxScroll) * (cards.length - 1)));
     };
 
     track.addEventListener('scroll', syncActive, { passive: true });
