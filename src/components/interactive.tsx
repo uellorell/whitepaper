@@ -150,11 +150,12 @@ export function ReportCarousel() {
   );
 }
 
-export function FAQAccordion() {
+export function FAQAccordion({ limit }: { limit?: number }) {
   const [open, setOpen] = useState<number | null>(null);
+  const visibleItems = limit ? faqItems.slice(0, limit) : faqItems;
   return (
     <div className="faq-list">
-      {faqItems.map((item, index) => {
+      {visibleItems.map((item, index) => {
         const expanded = open === index;
         return (
           <div className={`faq-item ${expanded ? "faq-item--open" : ""}`} key={item.question}>
