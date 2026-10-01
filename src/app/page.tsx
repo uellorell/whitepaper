@@ -8,21 +8,6 @@ function SectionLabel({ number, children, light = false }: { number: string; chi
   return <p className={`section-label ${light ? "section-label--light" : ""}`}><span>{number}</span><span>{children}</span></p>;
 }
 
-function ReportObject({ small = false }: { small?: boolean }) {
-  return (
-    <div className={`report-object ${small ? "report-object--small" : ""}`} role="img" aria-label="Ilustrasi sampul digital whitepaper Beyond the Stereotypes: Understanding Gen Z">
-      <div className="report-object__page report-object__page--back" aria-hidden="true"><span>IDENTITY / CULTURE / MUSIC / MONEY</span><i /></div>
-      <div className="report-object__page report-object__page--middle" aria-hidden="true"><span>RESEARCH & ANALYTICS KG MEDIA</span><i /></div>
-      <div className="report-cover">
-        <div className="report-cover__top"><span>RESEARCH & ANALYTICS<br />KG MEDIA</span><span>4 STUDIES</span></div>
-        <div className="report-cover__art" aria-hidden="true"><span className="orbit orbit--one" /><span className="orbit orbit--two" /><span className="orbit orbit--three" /><span className="orbit-dot orbit-dot--one" /><span className="orbit-dot orbit-dot--two" /></div>
-        <div className="report-cover__title"><span>BEYOND THE<br />STEREOTYPES:</span><strong>Understanding<br />Gen Z</strong></div>
-        <div className="report-cover__bottom"><span>IDENTITY · CULTURE · MUSIC · MONEY</span><span>KOMPAS.COM</span></div>
-      </div>
-    </div>
-  );
-}
-
 export default function Home() {
   return (
     <>
@@ -118,10 +103,10 @@ export default function Home() {
             <SectionLabel number="05">UNTUK PEKERJAAN &amp; KEPUTUSAN ANDA</SectionLabel>
             <div className="conversion__audience">
               <div className="section-heading section-heading--split"><h2 id="conversion-title">Insight yang Bisa Dipakai, <em>Bukan Sekadar Dibaca.</em></h2><p>Perspektif yang membantu Anda memahami konteks sebelum membuat keputusan.</p></div>
-              <div className="audience__grid">{audiences.map((item) => <article key={item.number}><span>{item.number} /</span><div><h3>{item.title}</h3><p>{item.value}</p></div><span className="audience__arrow" aria-hidden="true">↗</span></article>)}</div>
+              <div className="audience__grid">{audiences.map((item) => <article key={item.number}><span>{item.number}.</span><div><h3>{item.title}</h3><p>{item.value}</p></div><span className="audience__arrow" aria-hidden="true">↗</span></article>)}</div>
             </div>
             <div id="harga" className="conversion__offer" aria-labelledby="purchase-title">
-              <div className="purchase__grid"><div className="purchase__details"><p className="purchase__subhead">NILAI REPORT</p><h3 id="purchase-title">Dapatkan Full Report <em>Understanding Gen Z.</em></h3><p className="purchase__intro">Satu sumber insight untuk membaca empat sisi Gen Z Indonesia.</p><div className="purchase__contents"><p className="purchase__subhead">YANG ANDA DAPATKAN</p><ul><li>Understanding Gen Z digital whitepaper, ±30 halaman</li><li>Sintesis insight dari 4 studi Gen Z</li><li>Perspektif identitas, kultur, musik, dan finansial</li></ul></div><div className="purchase__plus"><span>+</span><div><strong>Termasuk Kompas.com PLUS MAX</strong><p>Benefit tambahan dari Kompas.com. [Konfirmasi rincian dan durasi akses PLUS MAX]</p></div></div></div><div className="purchase__panel"><div className="purchase__panel-visual"><ReportObject small /></div><div className="purchase__panel-bottom"><p>BEYOND THE STEREOTYPES: UNDERSTANDING GEN Z</p><div className="purchase__price"><span className="old-price">Rp99.000</span><strong>Rp59.000</strong></div><PurchaseButton className="purchase__button" label="Dapatkan Report Sekarang" /><span className="purchase__note">[Konfirmasi URL checkout dan mekanisme fulfillment]</span></div></div></div>
+              <div className="purchase__grid"><div className="purchase__details"><p className="purchase__subhead">NILAI REPORT</p><h3 id="purchase-title">Dapatkan Full Report <em>Understanding Gen Z.</em></h3><p className="purchase__intro">Satu sumber insight untuk membaca empat sisi Gen Z Indonesia.</p><div className="purchase__contents"><p className="purchase__subhead">YANG ANDA DAPATKAN</p><ul><li>Understanding Gen Z digital whitepaper, ±30 halaman</li><li>Sintesis insight dari 4 studi Gen Z</li><li>Perspektif identitas, kultur, musik, dan finansial</li></ul></div><div className="purchase__plus"><span>+</span><div><strong>Termasuk Kompas.com PLUS MAX</strong><p>Benefit tambahan dari Kompas.com. [Konfirmasi rincian dan durasi akses PLUS MAX]</p></div></div></div><div className="purchase__panel"><div className="purchase__panel-bottom"><p className="purchase__panel-kicker">FULL DIGITAL REPORT</p><h4>Beyond the Stereotypes:<br /><em>Understanding Gen Z</em></h4><p className="purchase__panel-summary">Empat perspektif tentang identitas, kultur, musik, dan finansial dalam satu publikasi.</p><div className="purchase__panel-meta"><span>4 STUDI</span><span>±30 HALAMAN</span></div><div className="purchase__price"><span className="old-price">Rp99.000</span><strong>Rp59.000</strong></div><p className="purchase__panel-access">Termasuk akses Kompas.com PLUS MAX</p><PurchaseButton className="purchase__button" label="Dapatkan Report Sekarang" /></div></div></div>
             </div>
             <div id="faq" className="conversion__faq" aria-labelledby="faq-title"><div><p className="purchase__subhead">FAQ</p><h3 id="faq-title">Sebelum Anda <em>Memutuskan.</em></h3><p className="faq__intro">Hal praktis yang perlu diketahui tentang report dan pembeliannya.</p><Image className="faq__character" src={publicAsset("/images/character-insight.webp")} alt="" aria-hidden="true" width={784} height={730} sizes="(max-width: 767px) 220px, 280px" /></div><FAQAccordion limit={5} /></div>
           </div>
