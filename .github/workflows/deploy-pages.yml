@@ -3,8 +3,6 @@ name: Deploy Whitepaper website
 on:
   push:
     branches: [main]
-    paths:
-      - "website-share/**"
   workflow_dispatch:
 
 permissions:
@@ -24,9 +22,17 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /whitepaper
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
-          path: ./website-share
+          path: ./out
       - id: deployment
         uses: actions/deploy-pages@v4

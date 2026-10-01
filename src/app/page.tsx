@@ -2,6 +2,8 @@ import Image from "next/image";
 import { audiences, dimensions, insights, timeline } from "@/content";
 import { FAQAccordion, PurchaseButton, ReportCarousel, StickyPurchase } from "@/components/interactive";
 
+const publicAsset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
+
 function SectionLabel({ number, children, light = false }: { number: string; children: React.ReactNode; light?: boolean }) {
   return <p className={`section-label ${light ? "section-label--light" : ""}`}><span>{number}</span><span>{children}</span></p>;
 }
@@ -45,7 +47,7 @@ export default function Home() {
           <div className="hero__visual">
             <Image
               className="hero__image"
-              src="/images/understanding-gen-z-hero-bleed.webp"
+              src={publicAsset("/images/understanding-gen-z-hero-bleed.webp")}
               alt="Ilustrasi sekelompok orang berdiskusi di sekitar meja dengan laptop dan catatan."
               width={1920}
               height={1080}
@@ -62,7 +64,7 @@ export default function Home() {
           <div className="container">
             <SectionLabel number="02">PERSPEKTIF &amp; CAKUPAN</SectionLabel>
             <div className="explore__opening">
-              <div className="why__intro"><h2 id="explore-title">Gen Z Lebih Kompleks dari <em>Stereotipnya.</em></h2><p>Satu generasi bisa hidup di banyak ruang, selera, dan prioritas. Untuk memahaminya, kita perlu melihat lebih dekat.</p><Image className="why__character" src="/images/character-perspective.webp" alt="" aria-hidden="true" width={610} height={570} sizes="(max-width: 760px) 280px, 410px" /></div>
+              <div className="why__intro"><h2 id="explore-title">Gen Z Lebih Kompleks dari <em>Stereotipnya.</em></h2><p>Satu generasi bisa hidup di banyak ruang, selera, dan prioritas. Untuk memahaminya, kita perlu melihat lebih dekat.</p><Image className="why__character" src={publicAsset("/images/character-perspective.webp")} alt="" aria-hidden="true" width={610} height={570} sizes="(max-width: 760px) 280px, 410px" /></div>
               <div className="why__questions" aria-label="Pertanyaan yang dijelajahi report">
                 <p className="why__cue">PERTANYAAN YANG LAYAK DITELUSURI</p>
                 <div><span>01</span><p>Mengapa mereka punya persona berbeda di media sosial?</p></div>
@@ -92,7 +94,7 @@ export default function Home() {
             <div id="preview" className="proof__preview" aria-labelledby="preview-title">
               <div className="proof__preview-heading"><div><p className="proof__eyebrow">DI DALAM REPORT</p><h3 id="preview-title">Intip Isi <em>Report.</em></h3></div><div><p>Dari identitas hingga cara mereka memandang uang: lihat bagaimana empat perspektif hadir dalam satu publikasi.</p></div></div>
               <figure className="preview__source-page">
-                <Image src="/images/understanding-gen-z-hero-bleed.webp" alt="Halaman sampul Understanding Gen Z dari PDF sumber, dengan judul dan ilustrasi diskusi Gen Z." width={1920} height={1080} sizes="(max-width: 760px) calc(100vw - 36px), (max-width: 1280px) calc(100vw - 80px), 1200px" />
+                <Image src={publicAsset("/images/understanding-gen-z-hero-bleed.webp")} alt="Halaman sampul Understanding Gen Z dari PDF sumber, dengan judul dan ilustrasi diskusi Gen Z." width={1920} height={1080} sizes="(max-width: 760px) calc(100vw - 36px), (max-width: 1280px) calc(100vw - 80px), 1200px" />
                 <figcaption className="preview__source-caption"><span>01. SAMPUL</span></figcaption>
               </figure>
               <ReportCarousel />
@@ -121,7 +123,7 @@ export default function Home() {
             <div id="harga" className="conversion__offer" aria-labelledby="purchase-title">
               <div className="purchase__grid"><div className="purchase__details"><p className="purchase__subhead">NILAI REPORT</p><h3 id="purchase-title">Dapatkan Full Report <em>Understanding Gen Z.</em></h3><p className="purchase__intro">Satu sumber insight untuk membaca empat sisi Gen Z Indonesia.</p><div className="purchase__contents"><p className="purchase__subhead">YANG ANDA DAPATKAN</p><ul><li>Understanding Gen Z digital whitepaper, ±30 halaman</li><li>Sintesis insight dari 4 studi Gen Z</li><li>Perspektif identitas, kultur, musik, dan finansial</li></ul></div><div className="purchase__plus"><span>+</span><div><strong>Termasuk Kompas.com PLUS MAX</strong><p>Benefit tambahan dari Kompas.com. [Konfirmasi rincian dan durasi akses PLUS MAX]</p></div></div></div><div className="purchase__panel"><div className="purchase__panel-visual"><ReportObject small /></div><div className="purchase__panel-bottom"><p>BEYOND THE STEREOTYPES: UNDERSTANDING GEN Z</p><div className="purchase__price"><span className="old-price">Rp99.000</span><strong>Rp59.000</strong></div><PurchaseButton className="purchase__button" label="Dapatkan Report Sekarang" /><span className="purchase__note">[Konfirmasi URL checkout dan mekanisme fulfillment]</span></div></div></div>
             </div>
-            <div id="faq" className="conversion__faq" aria-labelledby="faq-title"><div><p className="purchase__subhead">FAQ</p><h3 id="faq-title">Sebelum Anda <em>Memutuskan.</em></h3><p className="faq__intro">Hal praktis yang perlu diketahui tentang report dan pembeliannya.</p><Image className="faq__character" src="/images/character-insight.webp" alt="" aria-hidden="true" width={784} height={730} sizes="(max-width: 767px) 220px, 280px" /></div><FAQAccordion limit={5} /></div>
+            <div id="faq" className="conversion__faq" aria-labelledby="faq-title"><div><p className="purchase__subhead">FAQ</p><h3 id="faq-title">Sebelum Anda <em>Memutuskan.</em></h3><p className="faq__intro">Hal praktis yang perlu diketahui tentang report dan pembeliannya.</p><Image className="faq__character" src={publicAsset("/images/character-insight.webp")} alt="" aria-hidden="true" width={784} height={730} sizes="(max-width: 767px) 220px, 280px" /></div><FAQAccordion limit={5} /></div>
           </div>
         </section>
 
@@ -135,7 +137,7 @@ export default function Home() {
               <p>Lihat lebih dalam bagaimana Gen Z membangun identitas, mengikuti budaya, menikmati musik, dan mengambil keputusan finansial.</p>
               <div className="final__action"><span>Rp59.000</span><PurchaseButton /></div>
             </div>
-            <div className="final__characters" aria-hidden="true"><Image src="/images/character-group.webp" alt="" width={1714} height={1156} sizes="(max-width: 760px) calc(100vw - 36px), (max-width: 1100px) 340px, 470px" /></div>
+            <div className="final__characters" aria-hidden="true"><Image src={publicAsset("/images/character-group.webp")} alt="" width={1714} height={1156} sizes="(max-width: 760px) calc(100vw - 36px), (max-width: 1100px) 340px, 470px" /></div>
           </div>
         </section>
       </main>
