@@ -123,7 +123,7 @@ p{line-height:1.6}
 .insights__list{border-top:1px solid #b9acd17a}
 .insight{display:grid;grid-template-columns:180px 1fr 55px;gap:25px;align-items:start;border-bottom:1px solid #b9acd17a;padding:36px 0 40px}
 .insight__number{font-size:10px;letter-spacing:.15em;font-weight:700;color:#cbb4f3;margin-top:11px}
-.insight blockquote{font-family:var(--font-ui);font-size:clamp(27px,2.75vw,41px);line-height:1.25;letter-spacing:-.04em;max-width:880px;margin:0 0 17px}.insight p{font-size:13px;color:#b5c9d5;margin:0}.insight__asterisk{font-size:25px;color:#baa0e9;text-align:right;font-weight:400;line-height:1}
+.insight blockquote{font-family:var(--font-ui);font-size:18px;line-height:1.5;letter-spacing:-.02em;max-width:880px;margin:0 0 17px}.insight p{font-size:13px;color:#b5c9d5;margin:0}.insight__asterisk{font-size:25px;color:#baa0e9;text-align:right;font-weight:400;line-height:1}
 .insight--2{margin-left:9%}.insight--3{margin-left:3%}.insight--4{margin-left:14%}
 .insights__link{display:inline-flex;align-items:center;gap:22px;margin-top:42px;padding-bottom:11px;border-bottom:1px solid #c9b5f1;font-size:13px;font-weight:700;color:#eee7fa}
 .insights__link span{font-size:20px;font-weight:400}.insights__link:hover{color:#fff;border-color:#fff}
@@ -229,7 +229,7 @@ p{line-height:1.6}
   .why,.sides,.insights,.preview,.research,.audience,.purchase,.faq{padding:79px 0 86px}
   .why__grid{display:block}.why h2{margin-bottom:20px}.why__intro>p{font-size:16px;margin-bottom:42px}.why__cue{margin-bottom:15px}.why__questions p{font-size:19px}.why__questions>div{grid-template-columns:30px 1fr}
   .sides__grid{display:block}.side{min-height:0;padding:25px 0 26px;border-right:0!important;border-bottom:1px solid #ded9e5!important}.side:last-child{border-bottom:0!important}.side__top{min-height:65px}.side__glyph{width:46px;height:46px}.side--money .side__glyph{width:43px;height:43px}.side h3{font-size:30px;margin-bottom:8px}.side>p{margin-bottom:19px}.side ul{margin-top:0}
-  .insights__heading{display:block;margin-bottom:38px}.insights__heading h2{font-size:clamp(41px,10.3vw,54px);margin-bottom:21px}.insights__heading p{font-size:15px}.insight{grid-template-columns:1fr 24px;gap:8px 12px;padding:29px 0 32px;margin-left:0!important}.insight__number{grid-column:1/-1;margin:0 0 6px}.insight blockquote{font-size:clamp(27px,7vw,35px)}.insight p{font-size:12px}.insight__asterisk{font-size:18px}.insights__link{margin-top:30px}
+  .insights__heading{display:block;margin-bottom:38px}.insights__heading h2{font-size:clamp(41px,10.3vw,54px);margin-bottom:21px}.insights__heading p{font-size:15px}.insight{grid-template-columns:1fr 24px;gap:8px 12px;padding:29px 0 32px;margin-left:0!important}.insight__number{grid-column:1/-1;margin:0 0 6px}.insight blockquote{font-size:18px}.insight p{font-size:12px}.insight__asterisk{font-size:18px}.insights__link{margin-top:30px}
   .preview-item{flex-basis:min(75%,330px)}.preview-track{gap:15px;margin-right:-18px;padding-right:18px}.mock-page{padding:16px}.mock-page h3{font-size:clamp(29px,8vw,39px)}.preview-controls{grid-template-columns:1fr 1fr;margin-top:17px}.preview-dots{display:none}.preview-buttons{grid-column:2}
   .research__header{display:block;margin-bottom:34px}.research h2{margin-bottom:20px}.research__header>div>p:first-child{font-size:15px}.research__signals{margin-bottom:54px}.research__signals>div{min-height:100px;padding:15px}.research__signals strong{font-size:clamp(25px,7vw,34px)}.research__signals span{font-size:8px;line-height:1.4}.timeline__heading{display:block;margin-bottom:26px}.timeline__heading h3{font-size:28px;margin-bottom:4px}.timeline ol{display:block;border-left:1px solid #b7a9cf;margin-left:6px}.timeline ol::before{display:none}.timeline li{padding:0 0 29px 25px}.timeline li:last-child{padding-bottom:0}.timeline__year{margin-bottom:6px}.timeline__dot{position:absolute;left:-5px;top:30px;margin:0}.timeline h4{font-size:22px;max-width:350px}.timeline li p{font-size:12px}
   .audience__grid{display:block}.audience__grid article{min-height:0;padding:23px 0 26px;grid-template-columns:36px 1fr 20px}.audience__grid article:nth-child(3){border-bottom:0}.audience__grid article:last-child{border-bottom:1px solid #ded9e5}.audience__grid h3{font-size:27px}
@@ -535,27 +535,19 @@ h2 em,h1 em{font-weight:inherit}
 
 /* Source-derived character motifs: one quiet opening, one insight, one close. */
 .why__character{display:block;width:min(100%,410px);height:auto;margin:44px 0 -62px -16px;object-fit:contain;mask-image:linear-gradient(to bottom,#000 0%,#000 78%,transparent 100%);pointer-events:none}
-.insight--1{position:relative;min-height:355px;padding-right:345px}
 .insight--1 .insight__asterisk{display:none}
-.insight__character{position:absolute;right:2px;bottom:0;display:block;width:340px;height:auto;max-height:345px;object-fit:contain;object-position:bottom right;mask-image:linear-gradient(to bottom,#000 0%,#000 74%,transparent 100%);pointer-events:none}
 .final__inner{grid-template-columns:minmax(0,1fr) minmax(300px,410px);gap:34px}
 .final__characters{align-self:end;display:flex;align-items:flex-end;min-width:0;margin-bottom:-111px;pointer-events:none}
 .final__characters img{display:block;width:calc(100% + 58px);max-width:none;height:auto;filter:drop-shadow(0 20px 18px #21104735)}
 @media(max-width:1100px){
   .why__character{width:min(100%,340px)}
-  .insight--1{padding-right:265px;min-height:305px}
-  .insight__character{width:260px;max-height:295px}
   .final__inner{grid-template-columns:minmax(0,1fr) minmax(250px,340px);gap:22px}
   .final__characters img{width:calc(100% + 30px)}
 }
 @media(min-width:761px) and (max-width:900px){
-  .insight--1{min-height:0;padding-right:0}
-  .insight__character{position:relative;right:auto;bottom:auto;grid-column:2/-1;justify-self:end;width:250px;max-height:none;margin:-10px 0 -44px}
 }
 @media(max-width:760px){
   .why__character{width:min(100%,285px);margin:31px 0 16px -8px}
-  .insight--1{min-height:0;padding-right:0}
-  .insight__character{position:relative;right:auto;bottom:auto;grid-column:1/-1;justify-self:end;width:210px;max-height:none;margin:18px 0 -40px auto}
   .final__inner{display:block}
   .final__characters{width:min(100%,450px);margin:35px auto -111px}
   .final__characters img{width:100%}
@@ -674,7 +666,7 @@ p{font-size:14px;line-height:22px}
 .hero__eyebrow{display:none}
 .hero__eyebrow .eyebrow__line{background:#fff}
 .hero__details{transform:translateY(4px)}
-.hero__description{position:relative;top:-62px;max-width:440px;margin-bottom:-56px;font-size:16px;line-height:26px;color:#26233b}
+.hero__description{position:relative;top:-56px;max-width:440px;margin-bottom:-56px;font-size:16px;line-height:26px;color:#26233b}
 .hero__purchase{gap:20px}
 .price-stack strong{font-size:24px;line-height:30px;font-weight:700;color:#26233b}
 .hero__support{margin-top:12px;font-size:13px;line-height:20px;color:#26233b}
@@ -688,7 +680,7 @@ p{font-size:14px;line-height:22px}
 .why__intro>p{max-width:620px;font-size:16px;line-height:26px}
 .why__questions>div{grid-template-columns:36px 1fr;gap:16px;padding:20px 0}
 .why__questions>div>span{font-size:14px;line-height:20px;color:var(--secondary)}
-.why__questions p{font-size:23px;line-height:32px;font-weight:600;letter-spacing:-.025em}
+.why__questions p{font-size:16px;line-height:24px;font-weight:600;letter-spacing:-.015em}
 .explore__dimensions{padding:72px 0 var(--space-section)}
 .explore__transition{margin-bottom:32px}
 .explore__dimensions .section-heading{margin-bottom:40px}
@@ -702,21 +694,23 @@ p{font-size:14px;line-height:22px}
 .side li{font-size:11px;line-height:16px}
 
 /* 03 — editorial proof, followed by a generously sized product view. */
-.proof{padding-top:var(--space-section)}
-.proof .insights__heading{gap:64px;margin-bottom:48px}
+.proof{padding-top:96px}
+.proof .insights__heading{gap:56px;margin-bottom:40px}
 .insights__heading h2{font-size:32px;line-height:40px;max-width:720px}
 .insights__heading p{font-size:16px;line-height:26px}
-.insight{grid-template-columns:96px 1fr 32px;gap:24px;padding:48px 0}
-.insight__number{margin-top:5px;font-size:14px;line-height:20px;letter-spacing:.05em;color:#c8d0ff}
-.insight blockquote{max-width:760px;margin-bottom:12px;font-size:31px;line-height:40px;font-weight:650}
+.insight{grid-template-columns:96px 1fr 32px;gap:20px;padding:36px 0}
+.insight__number{margin-top:3px;font-size:14px;line-height:20px;letter-spacing:.05em;color:#c8d0ff}
+.insight blockquote{max-width:760px;margin-bottom:8px;font-size:18px;line-height:27px;font-weight:650}
 .insight p{font-size:14px;line-height:22px}
-.proof__preview{margin-top:88px;padding:64px;background:#f5f6fb}
-.proof__preview-heading{gap:64px;margin-bottom:40px}
+.proof__preview{display:grid;grid-template-columns:minmax(300px,.85fr) minmax(0,1.1fr);column-gap:56px;row-gap:40px;margin-top:72px;padding:56px;background:#f5f6fb}
+.proof__preview-heading{grid-column:2;grid-row:1;display:block;align-self:center;margin-bottom:0}
+.proof__preview-heading>div:first-child{margin-bottom:20px}
 .proof__eyebrow{margin-bottom:8px;font-size:12px;line-height:16px}
 .proof__preview-heading h3{font-size:30px;line-height:38px}
 .proof__preview-heading>div:last-child>p:first-child{font-size:16px;line-height:26px}
 .preview__disclaimer{font-size:13px!important;line-height:20px!important}
-.proof__preview .preview__source-page{margin-bottom:40px;padding:20px;background:#fff}
+.proof__preview .preview__source-page{grid-column:1;grid-row:1;align-self:center;width:100%;max-width:500px;margin:0;padding:16px;background:#fff}
+.proof__preview>.preview-carousel{grid-column:1/-1;width:100%}
 .preview-item{flex-basis:calc((100% - 48px)/3)}
 .mock-page{padding:20px;border-radius:7px}
 .preview-buttons button,.preview-dots button{width:44px;height:44px}
@@ -759,6 +753,7 @@ p{font-size:14px;line-height:22px}
 .conversion__faq{grid-template-columns:minmax(280px,.65fr) minmax(0,1.1fr);gap:64px;padding-top:80px}
 .conversion__faq h3{margin-bottom:16px;font-size:30px;line-height:38px}
 .faq__intro{font-size:14px;line-height:22px}
+.faq__character{display:block;width:min(100%,280px);height:auto;margin:28px 0 -24px;object-fit:contain;mask-image:linear-gradient(to bottom,#000 0%,#000 82%,transparent 100%);pointer-events:none}
 .faq-list{display:grid;gap:8px;border:0}
 .faq-item{border:1px solid var(--secondary-line);border-radius:var(--card-radius)}
 .faq-item h3 button{min-height:64px;padding:16px 20px;font-size:14px;line-height:20px;font-weight:600}
@@ -813,21 +808,21 @@ p{font-size:14px;line-height:22px}
   .hero__bottom{order:3;position:relative;left:auto;right:auto;bottom:auto;padding:12px 0 16px;color:#67616e}
   .explore__opening{display:block;padding-bottom:64px}
   .why__questions{margin-top:32px}
-  .why__questions p{font-size:22px;line-height:30px}
+  .why__questions p{font-size:16px;line-height:24px}
   .explore__dimensions{padding:56px 0 var(--space-section)}
   .explore__dimensions .section-heading h3{font-size:28px;line-height:36px}
   .sides__grid{display:grid;grid-template-columns:1fr}
   .side{min-height:220px;padding:var(--card-padding);border:1px solid var(--secondary-line)!important}
   .proof{padding-top:var(--space-section)}
-  .proof .insights__heading{display:block;margin-bottom:40px}
+  .proof .insights__heading{display:block;margin-bottom:32px}
   .insights__heading h2{font-size:28px;line-height:36px;margin-bottom:16px}
-  .insight{grid-template-columns:1fr 24px;gap:8px 12px;padding:40px 0}
+  .insight{grid-template-columns:1fr 24px;gap:8px 12px;padding:28px 0}
   .insight__number{grid-column:1/-1}
-  .insight blockquote{font-size:25px;line-height:34px}
-  .proof__preview{margin-top:64px;padding:40px 16px}
+  .insight blockquote{font-size:18px;line-height:27px}
+  .proof__preview{display:block;margin-top:56px;padding:32px 16px}
   .proof__preview-heading{display:block;margin:0 4px 32px}
   .proof__preview-heading h3{font-size:28px;line-height:36px;margin-bottom:16px}
-  .proof__preview .preview__source-page{padding:12px;margin-bottom:32px}
+  .proof__preview .preview__source-page{max-width:500px;margin:0 auto 32px;padding:12px}
   .preview-item{flex-basis:min(78%,300px)}
   .research{padding:var(--space-section) 0}
   .research__header{display:block;margin-bottom:32px}
@@ -847,6 +842,7 @@ p{font-size:14px;line-height:22px}
   .conversion__faq{display:block;padding-top:64px}
   .conversion__faq>div:first-child{margin-bottom:32px}
   .conversion__faq h3{font-size:28px;line-height:36px}
+  .faq__character{width:220px;margin:24px auto 8px}
   .faq-item h3 button{font-size:14px;line-height:20px}
   .final{min-height:0;padding:72px 0 88px}
   .final__inner{display:block;min-height:0}
