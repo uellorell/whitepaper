@@ -32,22 +32,22 @@ export const dimensions = [
 
 export const insights = [
   {
-    number: "01 / IDENTITAS",
+    number: "01. IDENTITAS",
     quote: "Multi-persona bukan sekadar pencitraan—tetapi mekanisme perlindungan diri.",
     question: "Apa yang membuat mereka memilih sisi diri yang berbeda di tiap ruang?",
   },
   {
-    number: "02 / KULTUR",
+    number: "02. KULTUR",
     quote: "Nostalgia mereka sering datang dari era yang bahkan tidak pernah mereka alami.",
     question: "Mengapa masa lalu terasa begitu relevan bagi generasi digital?",
   },
   {
-    number: "03 / MUSIK",
+    number: "03. MUSIK",
     quote: "Feel sebuah lagu bisa lebih penting daripada genre maupun siapa musisinya.",
     question: "Apa artinya bagi cara musik ditemukan dan dibagikan?",
   },
   {
-    number: "04 / FINANSIAL",
+    number: "04. FINANSIAL",
     quote: "Kemandirian finansial menjadi fondasi untuk berbagai tujuan hidup.",
     question: "Bagaimana mereka menyeimbangkannya dengan passion dan gaya hidup?",
   },
@@ -57,10 +57,10 @@ export const insights = [
 // based only on chapter names and teaser copy from the approved brief.
 export const previewPages = [
   { type: "cover", label: "Sampul report", title: "Beyond the Stereotypes", subtitle: "Understanding Gen Z", kicker: "Research & Analytics KG Media" },
-  { type: "chapter", label: "Pembuka bab", title: "Satu Orang, Dua Panggung", subtitle: "Identity & the many sides of Gen Z", kicker: "01 / MEET THE GEN Z" },
-  { type: "quote", label: "Contoh halaman insight", title: "Nostalgia dari era yang tak pernah dialami.", subtitle: "Inside Gen Z Culture", kicker: "02 / CULTURE" },
-  { type: "chapter", label: "Pembuka bab", title: "TikTok: Discovery Musik Gen Z", subtitle: "Music Through Gen Z’s Lens", kicker: "03 / MUSIC" },
-  { type: "quote", label: "Contoh halaman insight", title: "Kemandirian finansial sebagai fondasi.", subtitle: "The Gen Z Money Mindset", kicker: "04 / MONEY" },
+  { type: "chapter", label: "Pembuka bab", title: "Satu Orang, Dua Panggung", subtitle: "Identity & the many sides of Gen Z", kicker: "01. MEET THE GEN Z" },
+  { type: "quote", label: "Contoh halaman insight", title: "Nostalgia dari era yang tak pernah dialami.", subtitle: "Inside Gen Z Culture", kicker: "02. CULTURE" },
+  { type: "chapter", label: "Pembuka bab", title: "TikTok: Discovery Musik Gen Z", subtitle: "Music Through Gen Z’s Lens", kicker: "03. MUSIC" },
+  { type: "quote", label: "Contoh halaman insight", title: "Kemandirian finansial sebagai fondasi.", subtitle: "The Gen Z Money Mindset", kicker: "04. MONEY" },
 ] as const;
 
 export const timeline = [

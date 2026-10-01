@@ -2,10 +2,6 @@ import Image from "next/image";
 import { audiences, dimensions, insights, timeline } from "@/content";
 import { FAQAccordion, PurchaseButton, ReportCarousel, StickyPurchase } from "@/components/interactive";
 
-function Brand({ light = false }: { light?: boolean }) {
-  return <span className={`brand ${light ? "brand--light" : ""}`} aria-label="Kompas.com"><span className="brand__mark">K</span><span>Kompas<span className="brand__dot">.com</span></span></span>;
-}
-
 function SectionLabel({ number, children, light = false }: { number: string; children: React.ReactNode; light?: boolean }) {
   return <p className={`section-label ${light ? "section-label--light" : ""}`}><span>{number}</span><span>{children}</span></p>;
 }
@@ -29,13 +25,6 @@ export default function Home() {
   return (
     <>
       <a href="#konten" className="skip-link">Langsung ke konten</a>
-      <header className="site-header" id="top">
-        <div className="site-header__inner container">
-          <a href="#top" className="site-header__brand" aria-label="Kompas.com, kembali ke atas"><Brand /><span className="site-header__divider" /><span className="site-header__research">Research & Analytics</span></a>
-          <nav aria-label="Navigasi utama" className="site-header__nav"><a href="#cakupan">Cakupan</a><a href="#preview">Isi report</a><a href="#riset">Tentang riset</a></nav>
-          <a href="#harga" className="header-cta">Dapatkan Report <span aria-hidden="true">↗</span></a>
-        </div>
-      </header>
       <StickyPurchase />
 
       <main id="konten">
@@ -44,11 +33,13 @@ export default function Home() {
           <div className="hero__texture" aria-hidden="true" />
           <div className="hero__inner container">
             <div className="hero__copy">
-              <p className="eyebrow hero__eyebrow"><span className="eyebrow__line" /> Research & Analytics KG Media</p>
+              <p className="eyebrow hero__eyebrow"><span className="eyebrow__line" /> 01 — Research & Analytics KG Media</p>
               <h1 id="hero-title" className="hero__sr-only">Beyond the Stereotypes: Understanding Gen Z</h1>
-              <p className="hero__description">Memahami Gen Z Indonesia lebih dalam lewat empat riset tentang identitas, budaya, musik, dan cara mereka memandang uang.</p>
-              <div className="hero__purchase"><div className="price-stack"><span className="old-price">Rp99.000</span><strong>Rp59.000</strong></div><PurchaseButton /></div>
-              <p className="hero__support"><span aria-hidden="true">✦</span> Termasuk akses Kompas.com PLUS MAX</p>
+              <div className="hero__details">
+                <p className="hero__description">Memahami Gen Z Indonesia lebih dalam lewat empat riset tentang identitas, budaya, musik, dan cara mereka memandang uang.</p>
+                <div className="hero__purchase"><div className="price-stack"><span className="old-price">Rp99.000</span><strong>Rp59.000</strong></div><PurchaseButton /></div>
+                <p className="hero__support">Termasuk akses Kompas.com PLUS MAX</p>
+              </div>
             </div>
           </div>
           <div className="hero__visual">
@@ -63,7 +54,7 @@ export default function Home() {
               fetchPriority="high"
             />
           </div>
-          <div className="hero__bottom container"><span>SCROLL TO EXPLORE</span><span>01 — 06</span></div>
+          <div className="hero__bottom container"><span>01 — 06</span></div>
         </section>
 
         {/* 02 — Why it matters + what you'll discover */}
@@ -81,7 +72,6 @@ export default function Home() {
               </div>
             </div>
             <div id="cakupan" className="explore__dimensions" aria-labelledby="dimensions-title">
-              <div className="explore__transition"><span aria-hidden="true">↓</span><p>Empat lensa untuk membaca perilaku, pilihan, dan budaya Gen Z Indonesia dengan lebih utuh.</p></div>
               <div className="section-heading section-heading--split"><h3 id="dimensions-title">Satu Report,<br /><em>Empat Sisi Gen Z.</em></h3><p>Dari identitas sampai cara mereka memandang uang, setiap lensa memberi konteks yang saling melengkapi.</p></div>
               <div className="sides__grid">
                 {dimensions.map((item) => <article key={item.number} className={`side side--${item.accent}`}><div className="side__top"><span className="side__number">{item.number}</span><span className="side__glyph" aria-hidden="true" /></div><h3>{item.title}</h3><p>{item.lead}</p><ul aria-label={`Topik ${item.title}`}>{item.topics.map((topic) => <li key={topic}>{topic}</li>)}</ul></article>)}
@@ -97,13 +87,13 @@ export default function Home() {
             <SectionLabel number="03" light>TEMUAN &amp; PRODUK</SectionLabel>
             <div className="insights__heading"><h2 id="insights-title">Temuan yang Mungkin Mengubah Cara Anda <em>Melihat Gen Z.</em></h2><p>Beberapa sudut pandang dari report. Cerita lengkap dan konteks risetnya ada di dalam.</p></div>
             <div className="insights__list">
-              {insights.map((item, index) => <article key={item.number} className={`insight insight--${index + 1}`}><span className="insight__number">{item.number}</span><div><blockquote>“{item.quote}”</blockquote><p>{item.question}</p></div><span className="insight__asterisk" aria-hidden="true">✳</span>{index === 0 && <Image className="insight__character" src="/images/character-insight.webp" alt="" aria-hidden="true" width={784} height={730} sizes="(max-width: 760px) 210px, (max-width: 1100px) 250px, 340px" />}</article>)}
+              {insights.map((item, index) => <article key={item.number} className={`insight insight--${index + 1}`}><span className="insight__number">{item.number}</span><div><blockquote>“{item.quote}”</blockquote><p>{item.question}</p></div>{index === 0 && <Image className="insight__character" src="/images/character-insight.webp" alt="" aria-hidden="true" width={784} height={730} sizes="(max-width: 760px) 210px, (max-width: 1100px) 250px, 340px" />}</article>)}
             </div>
             <div id="preview" className="proof__preview" aria-labelledby="preview-title">
               <div className="proof__preview-heading"><div><p className="proof__eyebrow">DI DALAM REPORT</p><h3 id="preview-title">Intip Isi <em>Report.</em></h3></div><div><p>Dari identitas hingga cara mereka memandang uang: lihat bagaimana empat perspektif hadir dalam satu publikasi.</p><p className="preview__disclaimer">Sampul berasal dari PDF sumber. Halaman lainnya masih berupa ilustrasi. [Tambahkan halaman report final sebelum publikasi]</p></div></div>
               <figure className="preview__source-page">
                 <Image src="/images/understanding-gen-z-hero-bleed.webp" alt="Halaman sampul Understanding Gen Z dari PDF sumber, dengan judul dan ilustrasi diskusi Gen Z." width={1920} height={1080} sizes="(max-width: 760px) calc(100vw - 36px), (max-width: 1280px) calc(100vw - 80px), 1200px" />
-                <figcaption><span>VISUAL DARI PDF SUMBER</span><span>01 / SAMPUL</span></figcaption>
+                <figcaption className="preview__source-caption"><span>01. SAMPUL</span></figcaption>
               </figure>
               <ReportCarousel />
             </div>
@@ -131,7 +121,7 @@ export default function Home() {
             <div id="harga" className="conversion__offer" aria-labelledby="purchase-title">
               <div className="purchase__grid"><div className="purchase__details"><p className="purchase__subhead">NILAI REPORT</p><h3 id="purchase-title">Dapatkan Full Report <em>Understanding Gen Z.</em></h3><p className="purchase__intro">Satu sumber insight untuk membaca empat sisi Gen Z Indonesia.</p><div className="purchase__contents"><p className="purchase__subhead">YANG ANDA DAPATKAN</p><ul><li>Understanding Gen Z digital whitepaper, ±30 halaman</li><li>Sintesis insight dari 4 studi Gen Z</li><li>Perspektif identitas, kultur, musik, dan finansial</li></ul></div><div className="purchase__plus"><span>+</span><div><strong>Termasuk Kompas.com PLUS MAX</strong><p>Benefit tambahan dari Kompas.com. [Konfirmasi rincian dan durasi akses PLUS MAX]</p></div></div></div><div className="purchase__panel"><div className="purchase__panel-visual"><ReportObject small /></div><div className="purchase__panel-bottom"><p>BEYOND THE STEREOTYPES: UNDERSTANDING GEN Z</p><div className="purchase__price"><span className="old-price">Rp99.000</span><strong>Rp59.000</strong></div><PurchaseButton className="purchase__button" label="Dapatkan Report Sekarang" /><span className="purchase__note">[Konfirmasi URL checkout dan mekanisme fulfillment]</span></div></div></div>
             </div>
-            <div id="faq" className="conversion__faq" aria-labelledby="faq-title"><div><p className="purchase__subhead">PERTANYAAN UMUM</p><h3 id="faq-title">Sebelum Anda <em>Memutuskan.</em></h3><p className="faq__intro">Hal praktis yang perlu diketahui tentang report dan pembeliannya.</p></div><FAQAccordion limit={5} /></div>
+            <div id="faq" className="conversion__faq" aria-labelledby="faq-title"><div><p className="purchase__subhead">FAQ</p><h3 id="faq-title">Sebelum Anda <em>Memutuskan.</em></h3><p className="faq__intro">Hal praktis yang perlu diketahui tentang report dan pembeliannya.</p></div><FAQAccordion limit={5} /></div>
           </div>
         </section>
 
@@ -149,8 +139,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      <footer className="site-footer"><div className="container site-footer__inner"><div><Brand /><p>Research & Analytics KG Media</p></div><div><a href="#top">Kembali ke atas ↑</a><span>© 2026 Kompas.com</span></div></div></footer>
     </>
   );
 }
